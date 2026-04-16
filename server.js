@@ -38,9 +38,9 @@ app.post("/chat", async (req, res) => {
       reply: completion.choices[0].message.content,
     });
   } catch (err) {
-    console.log(err);
-    res.json({ reply: "⚠ Server error" });
-  }
+  console.log("FULL ERROR 👉", err);
+  res.json({ reply: "⚠ Server error" });
+}
 });
 
 app.listen(5000, () => console.log("🔥 Groq AI Running"));
